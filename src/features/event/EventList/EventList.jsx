@@ -1,17 +1,23 @@
-import React, { Component } from 'react'
-import  EventListItem  from './EventListItem'
+import React, { Component } from "react";
+import EventListItem from "./EventListItem";
 
 class EventList extends Component {
   render() {
-    const {events,onEventEdit} = this.props;
+    const { events, onEventOpen,deleteEvent } = this.props;
     return (
+      //#region
       <div>
         <h1>EventList</h1>
-        {events.map((event)=>(
-          <EventListItem key={event.id} event={event} onEventEdit={onEventEdit}/>
+        {events.map(event => (
+          <EventListItem
+            key={event.id}
+            event={event}
+            onEventOpen={onEventOpen}
+            deleteEvent={deleteEvent}
+          />
         ))}
       </div>
-    )
+    );
   }
 }
-export default EventList
+export default EventList;
