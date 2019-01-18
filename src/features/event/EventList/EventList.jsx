@@ -1,13 +1,12 @@
-import React, { Component } from "react";
-import EventListItem from "./EventListItem";
+import React, { Component } from 'react';
+import EventListItem from './EventListItem';
 
 class EventList extends Component {
   render() {
-    const { events, onEventOpen,deleteEvent } = this.props;
+    const { events, onEventOpen, deleteEvent } = this.props;
     return (
-      //#region
       <div>
-        <h1>EventList</h1>
+        <h1>Event List</h1>
         {events.map(event => (
           <EventListItem
             key={event.id}
@@ -20,4 +19,5 @@ class EventList extends Component {
     );
   }
 }
+
 export default EventList;
