@@ -5,15 +5,20 @@ import './index.css';
 import App from './app/layout/App';
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { configureStore } from './app/store/configureStore'
 
 const rootEl = document.getElementById('root');
+const store=configureStore();
 
 let render = () => {
     ReactDOM.render(
+      <Provider store={store}>
       <BrowserRouter>
         <App />
-      </BrowserRouter>,
-       rootEl)
+      </BrowserRouter>
+      </Provider>,
+       rootEl);
 }
 
 if (module.hot){
