@@ -1,10 +1,23 @@
-import React from 'react'
+import React from 'react';
+import EventDetaildHeader from './EventDetailedHeader';
+import EventDetailedInfo from './EventDetailedInfo';
+import EventDetailedSidebar from './EventDetailedSidebar';
+import EventDetailedChat from './EventDetailedChat';
+import { Grid } from 'semantic-ui-react';
+
 
 const EventDetailedPage = () => {
   return (
-    <div>
-      <h1>Event Detailed Page</h1>
-    </div>
+    <Grid>
+      <Grid.Column width={10}>
+        <EventDetaildHeader/>
+        <EventDetailedInfo/>
+        <EventDetailedChat/>
+      </Grid.Column>
+      <Grid.Column width={6}>
+        <EventDetailedSidebar/>
+      </Grid.Column>
+    </Grid>
   )
 }
 
